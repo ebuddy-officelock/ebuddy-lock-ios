@@ -566,11 +566,20 @@ static NSTimeInterval launchStartedAt;
     [self.notificationPresenter didRegisterLegacyNotificationSettings];
 }
 
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    return [self application:app openURL:url];
+}
+
 - (BOOL)application:(UIApplication *)application
               openURL:(NSURL *)url
     sourceApplication:(NSString *)sourceApplication
            annotation:(id)annotation
 {
+    return [self application:application openURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url {
+
     OWSAssertIsOnMainThread();
 
     if (self.didAppLaunchFail) {
@@ -606,6 +615,9 @@ static NSTimeInterval launchStartedAt;
         } else {
             OWSFailDebug(@"Application opened with an unknown URL action: %@", url.host);
         }
+    } else if ([url.scheme isEqualToString:kURLSchemeUniversalKey]) {
+        // Opened Universal URL, no action for now
+        return YES;
     } else {
         OWSFailDebug(@"Application opened with an unknown URL scheme: %@", url.scheme);
     }
