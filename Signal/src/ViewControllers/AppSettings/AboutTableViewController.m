@@ -70,7 +70,7 @@
     [helpSection addItem:[OWSTableItem disclosureItemWithText:NSLocalizedString(@"SETTINGS_SUPPORT", @"")
                                                   actionBlock:^{
                                                       [[UIApplication sharedApplication]
-                                                          openURL:[NSURL URLWithString:@"https://support.signal.org"]];
+                                                          openURL:[NSURL URLWithString:@"https://lock.ebuddy.com/help/"]];
                                                   }]];
     [contents addSection:helpSection];
 
@@ -78,11 +78,11 @@
     copyrightLabel.text = NSLocalizedString(@"SETTINGS_COPYRIGHT", @"");
     copyrightLabel.textColor = [Theme secondaryColor];
     copyrightLabel.font = [UIFont ows_regularFontWithSize:15.0f];
-    copyrightLabel.numberOfLines = 2;
+    copyrightLabel.numberOfLines = 0;
     copyrightLabel.lineBreakMode = NSLineBreakByWordWrapping;
     copyrightLabel.textAlignment = NSTextAlignmentCenter;
     helpSection.customFooterView = copyrightLabel;
-    helpSection.customFooterHeight = @(60.f);
+    helpSection.customFooterHeight = @(80.f);
 
 #ifdef DEBUG
     __block NSUInteger threadCount;

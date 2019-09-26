@@ -46,7 +46,11 @@
     [[UIToolbar appearance] setTintColor:[UIColor ows_materialBlueColor]];
     
     // If we set NSShadowAttributeName, the NSForegroundColorAttributeName value is ignored.
-    UINavigationBar.appearance.titleTextAttributes = @{ NSForegroundColorAttributeName : Theme.navbarTitleColor };
+    UINavigationBar.appearance.titleTextAttributes = @{ NSFontAttributeName : [UIFont ows_boldFontWithSize:17],NSForegroundColorAttributeName : Theme.navbarTitleColor };
+    if (@available(iOS 11.0, *)) {
+        UINavigationBar.appearance.largeTitleTextAttributes = @{ NSFontAttributeName : [UIFont ows_boldFontWithSize:24], NSForegroundColorAttributeName : Theme.navbarTitleColor };
+    }
+
 }
 
 @end

@@ -14,8 +14,8 @@ class InviteFlow: NSObject, MFMessageComposeViewControllerDelegate, MFMailCompos
         case message, mail, twitter
     }
 
-    let installUrl = "https://signal.org/install/"
-    let homepageUrl = "https://signal.org"
+    let installUrl = "https://lock.page.link/app"
+    let homepageUrl = "https://lock.ebuddy.com"
 
     @objc
     let actionSheetController: UIAlertController

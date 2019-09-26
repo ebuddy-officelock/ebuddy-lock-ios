@@ -31,7 +31,7 @@ public class OnboardingBaseViewController: OWSViewController {
         let titleLabel = UILabel()
         titleLabel.text = text
         titleLabel.textColor = Theme.primaryColor
-        titleLabel.font = UIFont.ows_dynamicTypeTitle1Clamped.ows_mediumWeight()
+        titleLabel.font = UIFont.ows_semiBoldFont(withSize: 28)
         titleLabel.numberOfLines = 0
         titleLabel.lineBreakMode = .byWordWrapping
         titleLabel.textAlignment = .center
@@ -50,15 +50,15 @@ public class OnboardingBaseViewController: OWSViewController {
     }
 
     func button(title: String, selector: Selector) -> OWSFlatButton {
-        return button(title: title, selector: selector, titleColor: .white, backgroundColor: .ows_materialBlue)
+        return button(title: title, selector: selector, titleColor: .white, backgroundColor: .ows_darkSkyBlue)
     }
 
     func linkButton(title: String, selector: Selector) -> OWSFlatButton {
-        return button(title: title, selector: selector, titleColor: .ows_materialBlue, backgroundColor: .white)
+        return button(title: title, selector: selector, titleColor: .ows_darkSkyBlue, backgroundColor: .white)
     }
 
     private func button(title: String, selector: Selector, titleColor: UIColor, backgroundColor: UIColor) -> OWSFlatButton {
-        let font = UIFont.ows_dynamicTypeBodyClamped.ows_mediumWeight()
+        let font = UIFont.ows_semiBoldFont(withSize: 17)
         // Button height should be 48pt if the font is 17pt.
         let buttonHeight = font.pointSize * 48 / 17
         let button = OWSFlatButton.button(title: title,

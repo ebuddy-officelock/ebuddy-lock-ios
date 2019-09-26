@@ -64,7 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)configureFonts
 {
-    self.timestampLabel.font = UIFont.ows_dynamicTypeCaption1Font;
+    self.timestampLabel.font = [UIFont ows_dynamicTypeCaption2Font];
 }
 
 - (CGFloat)hSpacing

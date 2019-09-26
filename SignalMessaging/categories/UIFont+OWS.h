@@ -8,15 +8,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIFont (OWS)
 
-+ (UIFont *)ows_thinFontWithSize:(CGFloat)size;
+//+ (UIFont *)ows_thinFontWithSize:(CGFloat)size;
 
 + (UIFont *)ows_lightFontWithSize:(CGFloat)size;
 
 + (UIFont *)ows_regularFontWithSize:(CGFloat)size;
 
++ (UIFont *)ows_italicFontWithSize:(CGFloat)size;
+
 + (UIFont *)ows_mediumFontWithSize:(CGFloat)size;
 
++ (UIFont *)ows_semiBoldFontWithSize:(CGFloat)size;
+
+//+ (UIFont *)ows_semiBoldItalicFontWithSize:(CGFloat)size;
+
 + (UIFont *)ows_boldFontWithSize:(CGFloat)size;
+
+//+ (UIFont *)ows_boldItalicFontWithSize:(CGFloat)size;
 
 #pragma mark - Icon Fonts
 
@@ -25,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIFont *)ows_elegantIconsFont:(CGFloat)size;
 
 #pragma mark - Dynamic Type
++ (UIFont *)dynamicCustomFontWithTextStyle:(UIFontTextStyle)style withSize:(CGFloat)size andWeight:(UIFontWeight)weight;
 
 @property (class, readonly, nonatomic) UIFont *ows_dynamicTypeTitle1Font;
 @property (class, readonly, nonatomic) UIFont *ows_dynamicTypeTitle2Font;

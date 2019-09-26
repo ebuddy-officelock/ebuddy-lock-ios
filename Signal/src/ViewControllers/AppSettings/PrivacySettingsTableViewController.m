@@ -17,7 +17,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-static NSString *const kSealedSenderInfoURL = @"https://signal.org/blog/sealed-sender/";
+static NSString *const kSealedSenderInfoURL = @"https://lock.ebuddy.com/l/sealed-sender";
 
 @implementation PrivacySettingsTableViewController
 

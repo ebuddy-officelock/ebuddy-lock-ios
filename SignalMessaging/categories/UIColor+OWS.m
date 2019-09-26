@@ -14,13 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIColor *)ows_signalBrandBlueColor
 {
-    return [UIColor colorWithRed:0.1135657504f green:0.4787300229f blue:0.89595204589999999f alpha:1.];
+    return [UIColor colorWithRGBHex:0x0A47BE];
 }
 
 + (UIColor *)ows_materialBlueColor
 {
     // blue: #2090EA
-    return [UIColor colorWithRed:32.f / 255.f green:144.f / 255.f blue:234.f / 255.f alpha:1.f];
+    return [UIColor colorWithRGBHex:0x0A47BE];
 }
 
 + (UIColor *)ows_darkIconColor
@@ -30,12 +30,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIColor *)ows_darkGrayColor
 {
-    return [UIColor colorWithRed:81.f / 255.f green:81.f / 255.f blue:81.f / 255.f alpha:1.f];
+    return [UIColor colorWithRGBHex:0x0E2643];
 }
 
 + (UIColor *)ows_darkThemeBackgroundColor
 {
-    return [UIColor colorWithRed:35.f / 255.f green:31.f / 255.f blue:32.f / 255.f alpha:1.f];
+    return [UIColor colorWithRGBHex:0x0E2643];
 }
 
 + (UIColor *)ows_fadedBlueColor
@@ -130,7 +130,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIColor *)ows_signalBlueColor
 {
-    return [UIColor colorWithRGBHex:0x2090EA];
+    return [UIColor colorWithRGBHex:0x123054];
 }
 
 + (UIColor *)ows_greenColor
@@ -199,7 +199,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIColor *)ows_darkSkyBlueColor
 {
     // HEX 0xc2090EA
-    return [UIColor colorWithRed:32.f / 255.f green:144.f / 255.f blue:234.f / 255.f alpha:1.f];
+    return [UIColor colorWithRGBHex:0x0A47BE];
 }
 
 @end

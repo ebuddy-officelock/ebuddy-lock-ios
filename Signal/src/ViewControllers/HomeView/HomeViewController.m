@@ -279,6 +279,10 @@ typedef NS_ENUM(NSInteger, HomeViewControllerSection) {
         [SignalApp.sharedApp setHomeViewController:self];
     }
 
+    if (@available(iOS 11.0, *)) {
+        self.navigationController.navigationBar.prefersLargeTitles = YES;
+    }
+    
     UIStackView *reminderStackView = [UIStackView new];
     _reminderStackView = reminderStackView;
     reminderStackView.axis = UILayoutConstraintAxisVertical;
@@ -334,7 +338,7 @@ typedef NS_ENUM(NSInteger, HomeViewControllerSection) {
     [self.tableView autoPinEdgesToSuperviewEdges];
 
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 60;
+    self.tableView.estimatedRowHeight = 72;
 
     self.emptyInboxView = [self createEmptyInboxView];
     [self.view addSubview:self.emptyInboxView];
@@ -743,10 +747,9 @@ typedef NS_ENUM(NSInteger, HomeViewControllerSection) {
     settingsButton.accessibilityLabel = CommonStrings.openSettingsButton;
     self.navigationItem.leftBarButtonItem = settingsButton;
 
-    self.navigationItem.rightBarButtonItem =
-        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
-                                                      target:self
-                                                      action:@selector(showNewConversationView)];
+    
+    UIBarButtonItem *newMessageButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NewMessageIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(showNewConversationView)];
+    self.navigationItem.rightBarButtonItem = newMessageButton;
 }
 
 - (void)settingsButtonPressed:(id)sender

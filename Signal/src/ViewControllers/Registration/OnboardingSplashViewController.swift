@@ -7,15 +7,17 @@ import PromiseKit
 
 @objc
 public class OnboardingSplashViewController: OnboardingBaseViewController {
-
+    var viewsToAnimate:[UIView] = []
+    
     override public func loadView() {
         super.loadView()
 
         view.backgroundColor = Theme.backgroundColor
         view.layoutMargins = .zero
-
-        let heroImage = UIImage(named: "onboarding_splash_hero")
-        let heroImageView = UIImageView(image: heroImage)
+        
+        let heroImageView = UIImageView()
+        let heroImage = UIImage(named: "Bubble")
+        heroImageView.image = heroImage
         heroImageView.contentMode = .scaleAspectFit
         heroImageView.layer.minificationFilter = kCAFilterTrilinear
         heroImageView.layer.magnificationFilter = kCAFilterTrilinear
@@ -59,6 +61,8 @@ public class OnboardingSplashViewController: OnboardingBaseViewController {
         stackView.autoPinWidthToSuperview()
         stackView.autoPin(toTopLayoutGuideOf: self, withInset: 0)
         stackView.autoPin(toBottomLayoutGuideOf: self, withInset: 0)
+        
+        viewsToAnimate = [heroImageView, titleLabel, explanationLabel, continueButton]
     }
 
      // MARK: - Events
@@ -79,4 +83,28 @@ public class OnboardingSplashViewController: OnboardingBaseViewController {
 
         onboardingController.onboardingSplashDidComplete(viewController: self)
     }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        for view in viewsToAnimate {
+            view.alpha = 0
+            view.transform = CGAffineTransform(translationX: 0, y: 40).concatenating(CGAffineTransform(scaleX: 0.95, y: 0.95))
+        }
+    }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        var delay = 0.0
+        for view in viewsToAnimate {
+            //Animate the image on load
+            UIView.animate(withDuration: 1, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+                view.alpha = 1
+                view.transform = .identity
+            }, completion: nil)
+            delay += 0.1
+        }
+        
+    }
+    
 }

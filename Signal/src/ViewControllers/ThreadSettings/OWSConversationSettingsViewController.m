@@ -852,7 +852,7 @@ const CGFloat kIconViewLength = 24;
         void (^addSubtitle)(NSAttributedString *) = ^(NSAttributedString *subtitle) {
             UILabel *subtitleLabel = [UILabel new];
             subtitleLabel.textColor = [Theme secondaryColor];
-            subtitleLabel.font = [UIFont ows_regularFontWithSize:kSubtitlePointSize];
+            subtitleLabel.font = [UIFont ows_dynamicTypeCaption1Font];
             subtitleLabel.attributedText = subtitle;
             subtitleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
             [threadNameView addSubview:subtitleLabel];

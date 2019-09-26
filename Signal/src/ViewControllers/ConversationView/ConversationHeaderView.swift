@@ -46,11 +46,11 @@ public class ConversationHeaderView: UIStackView {
     }
 
     @objc
-    public let titlePrimaryFont: UIFont =  UIFont.ows_boldFont(withSize: 17)
+    public let titlePrimaryFont: UIFont =  UIFont.dynamicCustomFont(withTextStyle: .body, withSize: 16, andWeight: .bold)
     @objc
-    public let titleSecondaryFont: UIFont =  UIFont.ows_regularFont(withSize: 9)
+    public let titleSecondaryFont: UIFont =  UIFont.ows_dynamicTypeCaption2Clamped
     @objc
-    public let subtitleFont: UIFont = UIFont.ows_regularFont(withSize: 12)
+    public let subtitleFont: UIFont = UIFont.ows_dynamicTypeCaption1Clamped
 
     private let titleLabel: UILabel
     private let subtitleLabel: UILabel

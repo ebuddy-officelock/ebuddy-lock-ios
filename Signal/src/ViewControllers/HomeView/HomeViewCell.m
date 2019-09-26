@@ -151,8 +151,8 @@ NS_ASSUME_NONNULL_BEGIN
     [vStackView autoPinLeadingToTrailingEdgeOfView:self.avatarView offset:self.avatarHSpacing];
     [vStackView autoVCenterInSuperview];
     // Ensure that the cell's contents never overflow the cell bounds.
-    [vStackView autoPinEdgeToSuperviewMargin:ALEdgeTop relation:NSLayoutRelationGreaterThanOrEqual];
-    [vStackView autoPinEdgeToSuperviewMargin:ALEdgeBottom relation:NSLayoutRelationGreaterThanOrEqual];
+    [vStackView autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.contentView withOffset:16 relation:NSLayoutRelationGreaterThanOrEqual];
+    [vStackView autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self.contentView withOffset:16 relation:NSLayoutRelationGreaterThanOrEqual];
     [vStackView autoPinTrailingToSuperviewMargin];
 
     vStackView.userInteractionEnabled = NO;
@@ -165,7 +165,7 @@ NS_ASSUME_NONNULL_BEGIN
     [self.unreadLabel setCompressionResistanceHigh];
 
     self.unreadBadge = [NeverClearView new];
-    self.unreadBadge.backgroundColor = [UIColor ows_materialBlueColor];
+    self.unreadBadge.backgroundColor = [UIColor ows_darkSkyBlueColor];
     [self.unreadBadge addSubview:self.unreadLabel];
     [self.unreadLabel autoCenterInSuperview];
     [self.unreadBadge setContentHuggingHigh];
@@ -247,6 +247,8 @@ NS_ASSUME_NONNULL_BEGIN
     if (hasUnreadMessages && overrideSnippet == nil) {
         textColor = [Theme primaryColor];
         self.dateTimeLabel.font = self.dateTimeFont.ows_mediumWeight;
+        self.nameLabel.textColor = [Theme navbarIconColor];
+        
     } else {
         self.dateTimeLabel.font = self.dateTimeFont;
     }
@@ -437,7 +439,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (UIFont *)nameFont
 {
-    return [UIFont ows_dynamicTypeBodyFont].ows_mediumWeight;
+    return [UIFont dynamicCustomFontWithTextStyle:UIFontTextStyleBody withSize:16 andWeight:UIFontWeightSemibold];
 }
 
 // Used for profile names.

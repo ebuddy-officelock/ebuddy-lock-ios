@@ -20,6 +20,7 @@ public class OnboardingPermissionsViewController: OnboardingBaseViewController {
                                                             action: #selector(skipWasPressed))
 
         let titleLabel = self.titleLabel(text: NSLocalizedString("ONBOARDING_PERMISSIONS_TITLE", comment: "Title of the 'onboarding permissions' view."))
+        titleLabel.font = UIFont.ows_semiBoldFont(withSize: 24)
 
         let explanationLabel = self.explanationLabel(explanationText: NSLocalizedString("ONBOARDING_PERMISSIONS_EXPLANATION",
                                                                                   comment: "Explanation in the 'onboarding permissions' view."))

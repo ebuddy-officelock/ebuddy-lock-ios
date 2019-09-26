@@ -38,11 +38,11 @@ class SAEFailedViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
                                                                 target: self,
                                                                 action: #selector(cancelPressed))
-        self.navigationItem.title = "Signal"
+        self.navigationItem.title = "eBuddy.lock"
 
         self.view.backgroundColor = UIColor.ows_signalBrandBlue
 
-        let logoImage = UIImage(named: "logoSignal")
+        let logoImage = UIImage(named: "iTunesArtwork@2x")
         let logoImageView = UIImageView(image: logoImage)
         self.view.addSubview(logoImageView)
         logoImageView.autoCenterInSuperview()

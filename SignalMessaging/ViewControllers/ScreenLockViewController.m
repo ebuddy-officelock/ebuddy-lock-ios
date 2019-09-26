@@ -37,7 +37,7 @@ NSString *NSStringForScreenLockUIState(ScreenLockUIState value)
 {
     [super loadView];
 
-    self.view.backgroundColor = UIColor.ows_materialBlueColor;
+    self.view.backgroundColor = UIColor.whiteColor;
 
     UIView *edgesView = [UIView containerView];
     [self.view addSubview:edgesView];
@@ -45,7 +45,7 @@ NSString *NSStringForScreenLockUIState(ScreenLockUIState value)
     [edgesView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
     [edgesView autoPinWidthToSuperview];
 
-    UIImage *image = [UIImage imageNamed:@"logoSignal"];
+    UIImage *image = [UIImage imageNamed:@"iTunesArtwork@2x"];
     UIImageView *imageView = [UIImageView new];
     imageView.image = image;
     [edgesView addSubview:imageView];

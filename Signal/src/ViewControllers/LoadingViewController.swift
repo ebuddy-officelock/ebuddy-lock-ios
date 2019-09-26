@@ -16,9 +16,9 @@ public class LoadingViewController: UIViewController {
 
     override public func loadView() {
         self.view = UIView()
-        view.backgroundColor = UIColor.ows_materialBlue
+        view.backgroundColor = UIColor.white
 
-        self.logoView = UIImageView(image: #imageLiteral(resourceName: "logoSignal"))
+        self.logoView = UIImageView(image: UIImage(named: "iTunesArtwork@2x"))
         view.addSubview(logoView)
 
         logoView.autoCenterInSuperview()

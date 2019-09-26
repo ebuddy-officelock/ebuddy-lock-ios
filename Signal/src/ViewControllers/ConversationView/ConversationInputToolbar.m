@@ -155,9 +155,9 @@ const CGFloat kMaxTextViewHeight = 98;
 
     _sendButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.sendButton setTitle:MessageStrings.sendButton forState:UIControlStateNormal];
-    [self.sendButton setTitleColor:UIColor.ows_signalBlueColor forState:UIControlStateNormal];
     self.sendButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.sendButton.titleLabel.font = [UIFont ows_mediumFontWithSize:17.f];
+    [self.sendButton setTitleColor:Theme.navbarIconColor forState:UIControlStateNormal];
+    self.sendButton.titleLabel.font = [UIFont ows_semiBoldFontWithSize:17.f];
     self.sendButton.contentEdgeInsets = UIEdgeInsetsMake(0, 4, 0, 4);
     [self.sendButton autoSetDimension:ALDimensionHeight toSize:kMinTextViewHeight];
     [self.sendButton addTarget:self action:@selector(sendButtonPressed) forControlEvents:UIControlEventTouchUpInside];
