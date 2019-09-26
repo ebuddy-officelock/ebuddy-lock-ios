@@ -53,7 +53,8 @@
 NSString *const AppDelegateStoryboardMain = @"Main";
 
 static NSString *const kInitialViewControllerIdentifier = @"UserInitialViewController";
-static NSString *const kURLSchemeSGNLKey                = @"sgnl";
+static NSString *const kURLSchemeSGNLKey                = @"xms";
+static NSString *const kURLSchemeUniversalKey           = @"com.ebuddy.xms";
 static NSString *const kURLHostVerifyPrefix             = @"verify";
 
 static NSTimeInterval launchStartedAt;
