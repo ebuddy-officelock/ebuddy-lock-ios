@@ -1638,6 +1638,8 @@ typedef enum : NSUInteger {
         return;
     }
 
+    [Analytics logWithEventName:@"call_started"];
+
     [self.outboundCallInitiator initiateCallWithRecipientId:self.thread.contactIdentifier isVideo:isVideo];
 }
 
@@ -3637,6 +3639,8 @@ typedef enum : NSUInteger {
             }
         }
 
+        [Analytics logWithEventName:@"media_message_sent"];
+
         BOOL didAddToProfileWhitelist = [ThreadUtil addThreadToProfileWhitelistIfEmptyContactThread:self.thread];
 
         __block TSOutgoingMessage *message;
@@ -4008,6 +4012,8 @@ typedef enum : NSUInteger {
     if (text.length < 1) {
         return;
     }
+
+    [Analytics logWithEventName:@"text_message_sent"];
 
     // Limit outgoing text messages to 16kb.
     //

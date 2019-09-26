@@ -537,6 +537,7 @@
 		B6FE7EB71ADD62FA00A6D22F /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FE7EB61ADD62FA00A6D22F /* PushKit.framework */; };
 		B90418E6183E9DD40038554A /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B90418E5183E9DD40038554A /* DateUtil.m */; };
 		B9EB5ABD1884C002007CBB57 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9EB5ABC1884C002007CBB57 /* MessageUI.framework */; };
+		BE3ADA962338FAAF00C97708 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3ADA952338FAAF00C97708 /* Analytics.swift */; };
 		BECD320C2276E6DC00EE3E1A /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E119FF7C2248F02E00751A6C /* Inter-Bold.ttf */; };
 		BECD320D2276E6DF00EE3E1A /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E119FF7E2248F02F00751A6C /* Inter-Regular.ttf */; };
 		BECD320E2276E6E200EE3E1A /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E119FF7F2248F02F00751A6C /* Inter-SemiBold.ttf */; };
@@ -2340,6 +2341,7 @@
 				34E5DC8120D8050D00C08145 /* RegistrationUtils.m */,
 				4521C3BF1F59F3BA00B4C582 /* TextFieldHelper.swift */,
 				FCFA64B11A24F29E0007FB87 /* UI Categories */,
+				BE3ADA952338FAAF00C97708 /* Analytics.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -3445,6 +3447,7 @@
 				34D1F0871F8678AA0066283D /* ConversationViewItem.m in Sources */,
 				451A13B11E13DED2000A50FD /* AppNotifications.swift in Sources */,
 				34D99CE4217509C2000AFB39 /* AppEnvironment.swift in Sources */,
+				BE3ADA962338FAAF00C97708 /* Analytics.swift in Sources */,
 				348570A820F67575004FF32B /* OWSMessageHeaderView.m in Sources */,
 				450DF2091E0DD2C6003D14BE /* UserNotificationsAdaptee.swift in Sources */,
 				34B6A907218B5241007C4606 /* TypingIndicatorCell.swift in Sources */,
