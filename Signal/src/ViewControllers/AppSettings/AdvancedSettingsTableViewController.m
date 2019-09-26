@@ -199,7 +199,7 @@ NS_ASSUME_NONNULL_BEGIN
                                                                 [weakSelf showDomainFrontingCountryView];
                                                             }]];
     }
-    [contents addSection:censorshipSection];
+    //    [contents addSection:censorshipSection]; // 2019-03-20 RB: hide toggle
 
     self.contents = contents;
 }

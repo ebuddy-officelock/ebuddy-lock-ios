@@ -95,16 +95,18 @@ NSString *const OWSCensorshipConfiguration_DefaultFrontingHost = OWSCensorshipCo
     // If you want to use a domain front other than the default, specify the domain front
     // in OWSCountryMetadata, and ensure we have a Security Policy for that domain in
     // `securityPolicyForDomain:`
-    return @{
-        // Egypt
-        @"+20" : @"EG",
-        // Oman
-        @"+968" : @"OM",
-        // Qatar
-        @"+974" : @"QA",
-        // UAE
-        @"+971" : @"AE",
-    };
+//    return @{
+//        // Egypt
+//        @"+20" : @"EG",
+//        // Oman
+//        @"+968" : @"OM",
+//        // Qatar
+//        @"+974" : @"QA",
+//        // UAE
+//        @"+971" : @"AE",
+//    };
+
+    return @{}; // 2019-03-20 RB: do not use censorship circumvention
 }
 
 // Returns nil if the phone number is not known to be censored
