@@ -353,13 +353,13 @@ typedef void (^DebugLogUploadFailure)(DebugLogUploader *uploader, NSError *error
                                          [Pastelog.sharedManager sendToMostRecentThread:url];
                                      }]];
 #endif
-        [alert addAction:[UIAlertAction
-                             actionWithTitle:NSLocalizedString(@"DEBUG_LOG_ALERT_OPTION_BUG_REPORT",
-                                                 @"Label for the 'Open a Bug Report' option of the debug log alert.")
-                                       style:UIAlertActionStyleDefault
-                                     handler:^(UIAlertAction *action) {
-                                         [Pastelog.sharedManager prepareRedirection:url completion:completion];
-                                     }]];
+//        [alert addAction:[UIAlertAction
+//                             actionWithTitle:NSLocalizedString(@"DEBUG_LOG_ALERT_OPTION_BUG_REPORT",
+//                                                 @"Label for the 'Open a Bug Report' option of the debug log alert.")
+//                                       style:UIAlertActionStyleDefault
+//                                     handler:^(UIAlertAction *action) {
+//                                         [Pastelog.sharedManager prepareRedirection:url completion:completion];
+//                                     }]];
         [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"DEBUG_LOG_ALERT_OPTION_SHARE",
                                                             @"Label for the 'Share' option of the debug log alert.")
                                                   style:UIAlertActionStyleDefault
@@ -548,32 +548,32 @@ typedef void (^DebugLogUploadFailure)(DebugLogUploader *uploader, NSError *error
     }
 }
 
-- (void)prepareRedirection:(NSURL *)url completion:(SubmitDebugLogsCompletion)completion
-{
-    OWSAssertDebug(completion);
-
-    UIPasteboard *pb = [UIPasteboard generalPasteboard];
-    [pb setString:url.absoluteString];
-
-    UIAlertController *alert =
-        [UIAlertController alertControllerWithTitle:NSLocalizedString(@"DEBUG_LOG_GITHUB_ISSUE_ALERT_TITLE",
-                                                        @"Title of the alert before redirecting to GitHub Issues.")
-                                            message:NSLocalizedString(@"DEBUG_LOG_GITHUB_ISSUE_ALERT_MESSAGE",
-                                                        @"Message of the alert before redirecting to GitHub Issues.")
-                                     preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction
-                         actionWithTitle:NSLocalizedString(@"OK", @"")
-                                   style:UIAlertActionStyleDefault
-                                 handler:^(UIAlertAction *action) {
-                                     [UIApplication.sharedApplication
-                                         openURL:[NSURL URLWithString:[[NSBundle mainBundle]
-                                                                          objectForInfoDictionaryKey:@"LOGS_URL"]]];
-
-                                     completion();
-                                 }]];
-    UIViewController *presentingViewController = UIApplication.sharedApplication.frontmostViewControllerIgnoringAlerts;
-    [presentingViewController presentViewController:alert animated:NO completion:nil];
-}
+//- (void)prepareRedirection:(NSURL *)url completion:(SubmitDebugLogsCompletion)completion
+//{
+//    OWSAssertDebug(completion);
+//
+//    UIPasteboard *pb = [UIPasteboard generalPasteboard];
+//    [pb setString:url.absoluteString];
+//
+//    UIAlertController *alert =
+//        [UIAlertController alertControllerWithTitle:NSLocalizedString(@"DEBUG_LOG_GITHUB_ISSUE_ALERT_TITLE",
+//                                                        @"Title of the alert before redirecting to GitHub Issues.")
+//                                            message:NSLocalizedString(@"DEBUG_LOG_GITHUB_ISSUE_ALERT_MESSAGE",
+//                                                        @"Message of the alert before redirecting to GitHub Issues.")
+//                                     preferredStyle:UIAlertControllerStyleAlert];
+//    [alert addAction:[UIAlertAction
+//                         actionWithTitle:NSLocalizedString(@"OK", @"")
+//                                   style:UIAlertActionStyleDefault
+//                                 handler:^(UIAlertAction *action) {
+//                                     [UIApplication.sharedApplication
+//                                         openURL:[NSURL URLWithString:[[NSBundle mainBundle]
+//                                                                          objectForInfoDictionaryKey:@"LOGS_URL"]]];
+//
+//                                     completion();
+//                                 }]];
+//    UIViewController *presentingViewController = UIApplication.sharedApplication.frontmostViewControllerIgnoringAlerts;
+//    [presentingViewController presentViewController:alert animated:NO completion:nil];
+//}
 
 - (void)sendToSelf:(NSURL *)url
 {
