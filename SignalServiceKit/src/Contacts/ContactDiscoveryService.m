@@ -354,7 +354,7 @@ NSError *ContactDiscoveryServiceErrorMakeWithReason(NSInteger code, NSString *re
 {
     ECKeyPair *keyPair = [Curve25519 generateKeyPair];
 
-    NSString *enclaveId = @"cd6cfc342937b23b1bdd3bbf9721aa5615ac9ff50a75c5527d441cd3276826c9";
+    NSString *enclaveId = contactDiscoveryEnclaveId;
 
     TSRequest *request = [OWSRequestFactory remoteAttestationRequest:keyPair
                                                            enclaveId:enclaveId
@@ -721,10 +721,12 @@ NSError *ContactDiscoveryServiceErrorMakeWithReason(NSInteger code, NSString *re
         OWSFailDebug(@"enclave ids do not match.");
         return NO;
     }
+#ifndef contactDiscoveryAcceptDebugEnclave
     if (quote.isDebugQuote) {
         OWSFailDebug(@"quote has invalid isDebugQuote value.");
         return NO;
     }
+#endif
     return YES;
 }
 

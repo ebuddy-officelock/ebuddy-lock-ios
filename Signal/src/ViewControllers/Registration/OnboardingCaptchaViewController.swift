@@ -39,7 +39,7 @@ public class OnboardingCaptchaViewController: OnboardingBaseViewController {
         self.webView = webView
         webView.navigationDelegate = self
         webView.allowsBackForwardNavigationGestures = false
-        webView.customUserAgent = "Signal iOS (+https://signal.org/download)"
+        webView.customUserAgent = "eBuddy Lock iOS (+https://lock.ebuddy.com/app)"
         webView.allowsLinkPreview = false
         webView.scrollView.contentInset = .zero
         webView.layoutMargins = .zero

@@ -20,20 +20,43 @@ typedef NS_ENUM(NSInteger, TSWhisperMessageType) {
 
 #define textSecureHTTPTimeOut 10
 
-#define kLegalTermsUrlString @"https://signal.org/legal/"
+#define kLegalTermsUrlString @"https://lock.ebuddy.com/termsandconditions/"
+#define SHOW_LEGAL_TERMS_LINK
 
 //#ifndef DEBUG
 
 // Production
-#define textSecureWebSocketAPI @"wss://textsecure-service.whispersystems.org/v1/websocket/"
-#define textSecureServerURL @"https://textsecure-service.whispersystems.org/"
-#define textSecureCDNServerURL @"https://cdn.signal.org"
+
+// OFFICIAL SIGNAL
+//#define textSecureWebSocketAPI @"wss://textsecure-service.whispersystems.org/v1/websocket/"
+//#define textSecureServerURL @"https://textsecure-service.whispersystems.org/"
+//#define textSecureCDNServerURL @"https://cdn.signal.org"
+
 // Use same reflector for service and CDN
-#define textSecureServiceReflectorHost @"textsecure-service-reflected.whispersystems.org"
-#define textSecureCDNReflectorHost @"textsecure-service-reflected.whispersystems.org"
-#define contactDiscoveryURL @"https://api.directory.signal.org"
-#define kUDTrustRoot @"BXu6QIKVz5MA8gstzfOgRQGqyLqOwNKHL6INkv3IHWMF"
+//#define textSecureServiceReflectorHost @"textsecure-service-reflected.whispersystems.org"
+//#define textSecureCDNReflectorHost @"textsecure-service-reflected.whispersystems.org"
+
+//#define contactDiscoveryURL @"https://api.directory.signal.org"
+//#define kUDTrustRoot @"BXu6QIKVz5MA8gstzfOgRQGqyLqOwNKHL6INkv3IHWMF"
+
+// LOCK
+#define textSecureWebSocketAPI @"wss://textsecure-service.officelock.com/v1/websocket/"
+#define textSecureServerURL @"https://textsecure-service.officelock.com"
+#define textSecureCDNServerURL @"https://cdn.officelock.com"
+
+// Use same reflector for service and CDN
+#define textSecureServiceReflectorHost @"services.officelock.com" // Not used
+#define textSecureCDNReflectorHost @"cdn.officelock.com" // Not used
+
+#define contactDiscoveryURL @"https://cds.officelock.com:9443"
+#define contactDiscoveryEnclaveId @"cd6cfc342937b23b1bdd3bbf9721aa5615ac9ff50a75c5527d441cd3276826c9"
+#define contactDiscoveryAcceptDebugEnclave 0 // comment if not accepted
+#define kUDTrustRoot @"BYrLZP4MR9uRWJBmX0v1Ob5PrU7/jK9kHwn2dwyapmR3"
+
+#define outageDetectionHost @"uptime.officelock.com"
+
 #define USING_PRODUCTION_SERVICE
+
 
 //#else
 
